@@ -1,0 +1,278 @@
+/* Color variables */
+/* Font variables */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/font/Montserrat/static/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/public/font/Montserrat/static/Montserrat-Bold.ttf");
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(-45deg, slateblue, #7d6bea, #6b58e6, #6d5bdf) fixed;
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
+}
+
+/* bg gradient transtions */
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/* Entire check-in form */
+.check-in-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  padding: 40px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.check-in-form h2 {
+  margin: 30px 0 30px;
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+
+/* User input fields */
+.check-in-form .user-box {
+  position: relative;
+}
+
+.check-in-form .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 2px solid dodgerblue;
+  outline: none;
+  background: transparent;
+}
+
+.check-in-form .user-box input:focus {
+  border-bottom: 2px solid #00BC7E;
+}
+
+.check-in-form .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: white;
+  pointer-events: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.check-in-form .user-box input:focus ~ label,
+.check-in-form .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #00BC7E;
+  font-size: 15px;
+}
+
+.check-in-form form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  border: none;
+}
+
+.check-in-form form button:hover {
+  background: #00BC7E;
+  -webkit-box-shadow: 0 0 15px #00BC7E, 0 0 15px #00BC7E, 0 0 15px #00BC7E, 0 0 15px #00BC7E;
+          box-shadow: 0 0 15px #00BC7E, 0 0 15px #00BC7E, 0 0 15px #00BC7E, 0 0 15px #00BC7E;
+  border: none;
+}
+
+.block button {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  border: none;
+}
+
+.block button:hover {
+  background: #00BC7E;
+  -webkit-box-shadow: 0 0 7px #00BC7E, 0 0 7px #00BC7E, 0 0 7px #00BC7E, 0 0 7px #00BC7E;
+          box-shadow: 0 0 7px #00BC7E, 0 0 7px #00BC7E, 0 0 7px #00BC7E, 0 0 7px #00BC7E;
+  border: none;
+}
+
+.block {
+  height: 500px;
+  overflow-y: auto;
+}
+
+/****** Login page ******/
+/* Entire Login form */
+.login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: auto;
+  max-width: 400px;
+  padding: 50px 30px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00BC7E), to(#108775));
+  background-image: linear-gradient(to bottom, #00BC7E, #108775);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+}
+
+.login-form h1 {
+  color: white;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.login-form .form-group {
+  margin-bottom: 30px;
+}
+
+.login-form label {
+  display: block;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.login-form input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+/* Input fields other than login (button) */
+.login-form input:not([type="submit"]) {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+          box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: #222;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.login-form input:not([type="submit"])::-webkit-input-placeholder {
+  color: #CCC;
+}
+
+.login-form input:not([type="submit"]):-ms-input-placeholder {
+  color: #CCC;
+}
+
+.login-form input:not([type="submit"])::-ms-input-placeholder {
+  color: #CCC;
+}
+
+.login-form input:not([type="submit"])::placeholder {
+  color: #CCC;
+}
+
+.login-form input:not([type="submit"]):focus,
+.login-form input:not([type="submit"]):valid {
+  background-color: white;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Login button */
+.login-form input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #2F4960;
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+          box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: crimson;
+}
+
+/* Exit icon */
+.exit a {
+  color: white;
+  font-size: 2em;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.exit a:hover {
+  color: gold;
+}
+/*# sourceMappingURL=main.css.map */

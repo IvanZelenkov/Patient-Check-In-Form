@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>Patient Check-in Form</title>
+</head>
+<body>
+    <div class="container row t-3 check-in-form" id="app">
+        <div class="form col-md-8">
+            <h2 class="text-center">Patient Check-in Form</h2>
+            <form class="mb-3" @submit.prevent="createPatient">
+                <div class="form-group user-box">
+                    <input type="text" autoComplete="none" required="required" class="form-control" id="patientID" v-model="form.patientID" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <label for="patientID" class="mr-3">Patient ID</label>
+                </div>
+                <div class="form-group user-box">
+                    <input type="text" autoComplete="none" required="required" class="text form-control" id="name" v-model="form.name">
+                    <label for="name" class="mr-3">Name</label>
+                </div>
+                <div class="form-group user-box">
+                    <input type="date" autoComplete="none" required="required" class="form-control" id="date" v-model="form.date">
+                </div>
+                <div class="form-group user-box">
+                    <input type="text" autoComplete="none" required="required" id="phoneNumber" v-model="form.phoneNumber" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <label for="phoneNumber" class="mr-3">Phone Number</label>
+                </div>
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <button class="btn btn-primary" type="submit" :disabled="!canCreate">Create</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4 block">
+            <div v-if="loading">
+                <loader/>
+            </div>
+            <div v-else-if="patients.length">
+                <div class="card mb-3" style="background: gold" v-for="patient in patients">
+                    <div class="card-body">
+                        <h6 class="card-text font-weight-bold">Patient ID: {{patient.patientID}}</h6>
+                        <h6  class="card-title font-weight-bold">Name: {{patient.name}}</h6>
+                        <h6  class="card-text font-weight-bold">Date: {{patient.date}}</h6>
+                        <h6  class="card-text font-weight-bold">Phone Number: {{patient.phoneNumber}}</h6>
+                        <div class="text-center">
+                            <button class="btn btn-danger button" @click="removePatient(patient.id)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-white text-center text-uppercase mt-5" v-else>No patients</p>
+        </div>
+        <div class="exit">
+            <a href="/logout">
+                <em class="bi bi-box-arrow-left"></em>
+            </a>
+        </div>
+    </div>
+<script type="module" src="frontend.js"></script>
+</body>
+</html>

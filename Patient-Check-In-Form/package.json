@@ -1,0 +1,30 @@
+{
+  "name": "patientcheckinform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm install && node app && nodemon app.js"
+  },
+  "keywords": [
+    "js",
+    "rest",
+    "api"
+  ],
+  "author": "Ivan Zelenkov",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.13.14",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
