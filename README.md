@@ -1,4 +1,4 @@
-# Patient-Check-In-Form
+# Patient Check-in form
 
 Username: admin
 <br>
